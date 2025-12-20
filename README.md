@@ -1,6 +1,7 @@
 # IRIS Zed Extension
 
 This extension provides comprehensive editor support for IRIS language files (`.iris`).
+It expects an Iris source checkout in your workspace to run the language server.
 
 ## Features
 
@@ -54,6 +55,10 @@ This extension provides comprehensive editor support for IRIS language files (`.
 ## Usage
 
 Once installed, the extension will automatically activate for any `.iris` files.
+Open the Iris repository as your workspace so the LSP can find:
+- `dist/src/lsp-server.js` (preferred)
+- `lsp-start.sh`
+- `src/lsp-server.ts`
 
 ### LSP Features
 
