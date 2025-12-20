@@ -30,7 +30,7 @@ impl zed::Extension for IrisExtension {
         if let Some(entry) = pick_entry(compiled_exists, script_exists, ts_exists) {
             return Ok(build_command(
                 entry,
-                worktree_path,
+                &worktree_path,
                 compiled_rel,
                 script_rel,
                 ts_rel,
