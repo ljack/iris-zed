@@ -1,0 +1,12 @@
+{
+  "name": "iris-zed",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test tests/query.test.cjs"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.26.3",
+    "web-tree-sitter": "^0.24.3"
+  }
+}

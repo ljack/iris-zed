@@ -86,6 +86,18 @@ To modify the extension:
 2. Rebuild with `npm run build`
 3. Reload the extension in Zed (Cmd+Shift+P → "Reload Extensions")
 
+### Query Tests
+
+The query tests validate highlights/outline/folds/indents against sample Iris code.
+They build the local grammar from `tree-sitter-iris/` in this repo.
+The first run will build a local wasm parser (via `tree-sitter build --wasm`) and download
+the WASI SDK into your cache.
+
+```bash
+npm install
+npm test
+```
+
 ## Troubleshooting
 
 **Extension fails to compile:**

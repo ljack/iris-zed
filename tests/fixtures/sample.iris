@@ -1,0 +1,20 @@
+;; Sample Iris file for query tests
+(program
+  (module (name "sample") (version 1))
+  (imports
+    (import "io" (as "io"))
+  )
+  (defs
+    (deffn (name main) (args) (ret I64) (eff !IO)
+      (body
+        (let (x 1)
+          (match x
+            (case (tag "Ok" (v)) (call io.print_utf8 "ok"))
+            (case (tag "Err" (e)) (call io.print_utf8 "err"))
+          )
+        )
+      )
+    )
+    (type User (record (name Str) (age I64)))
+  )
+)
