@@ -77,7 +77,7 @@ Open any `.iris` file (e.g., `examples/hello_full.iris` from the IRIS repo) to s
 ## Development
 
 The extension consists of:
-- **Tree-sitter grammar**: `tree-sitter-iris/` (from the IRIS repo)
+- **Tree-sitter grammar**: `tree-sitter-iris/` (in this repo)
 - **Language server**: `src/lsp-server.ts` (in the IRIS repo)
 - **Extension config**: `extension.toml`
 
