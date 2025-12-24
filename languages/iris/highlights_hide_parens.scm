@@ -2,9 +2,11 @@
 ((symbol) @keyword
   (#match? @keyword "^(program|module|imports|import|defs|deffn|deftool|deftype|defconst|type|union|record|name|version|args|ret|eff|body|doc|requires|ensures|caps|let|let\\*|if|cond|call|match|case|tag|lambda|intrinsic)$"))
 
-; Parens
-("(") @punctuation.bracket
-(")") @punctuation.bracket
+; Parens (hidden where conceal is supported)
+("(") @comment
+(#set! conceal " ")
+(")") @comment
+(#set! conceal " ")
 
 ; Types
 ((symbol) @type

@@ -9,6 +9,7 @@ It expects an Iris source checkout in your workspace to run the language server.
 - Tree-sitter grammar for IRIS S-expressions
 - Full syntax highlighting for keywords, types, functions, and literals
 - Bracket matching and code folding
+- Optional paren visibility modes (normal/dim/hidden)
 
 ### Language Server (LSP)
 - **Real-time diagnostics**: Parse errors and type errors as you type
@@ -73,6 +74,23 @@ Open any `.iris` file (e.g., `examples/hello_full.iris` from the IRIS repo) to s
 - Syntax highlighting
 - Real-time error diagnostics
 - Code outline in the sidebar
+
+### Paren Visibility Modes
+
+The extension ships with three highlight variants:
+- **Normal**: standard bracket coloring
+- **Dim**: parentheses rendered in a subdued color
+- **Hidden**: parentheses hidden when conceal is supported
+
+Use the helper scripts and reload the extension:
+
+```bash
+./scripts/use-parens-normal.sh
+./scripts/use-parens-dim.sh
+./scripts/use-parens-hide.sh
+```
+
+Then reload Zed (Cmd+Shift+P → “Reload Extensions”) or restart.
 
 ## Development
 
