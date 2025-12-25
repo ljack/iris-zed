@@ -1,4 +1,7 @@
-use zed_extension_api::{self as zed, Result, node_binary_path};
+use zed_extension_api::{
+    self as zed, node_binary_path, Result, SlashCommand, SlashCommandArgumentCompletion,
+    SlashCommandOutput,
+};
 
 struct IrisExtension;
 
@@ -43,6 +46,54 @@ impl zed::Extension for IrisExtension {
             worktree_path, compiled_exists, script_exists, ts_exists
         )
         .into())
+    }
+
+    fn complete_slash_command_argument(
+        &self,
+        command: SlashCommand,
+        _args: Vec<String>,
+    ) -> Result<Vec<SlashCommandArgumentCompletion>, String> {
+        if command.name != "iris-parens" {
+            return Ok(Vec::new());
+        }
+        let modes = ["normal", "dim", "hide"];
+        Ok(modes
+            .iter()
+            .map(|mode| SlashCommandArgumentCompletion {
+                label: mode.to_string(),
+                new_text: mode.to_string(),
+                run_command: true,
+            })
+            .collect())
+    }
+
+    fn run_slash_command(
+        &self,
+        command: SlashCommand,
+        args: Vec<String>,
+        _worktree: Option<&zed::Worktree>,
+    ) -> Result<SlashCommandOutput, String> {
+        if command.name != "iris-parens" {
+            return Err(format!("Unknown slash command: {}", command.name));
+        }
+
+        let mode = args.get(0).map(|s| s.as_str()).unwrap_or("normal");
+        let target = match mode {
+            "dim" => "Iris (Dim Parens)",
+            "hide" => "Iris (Hide Parens)",
+            _ => "Iris",
+        };
+
+        let text = format!(
+            "Iris paren mode: {mode}\n\
+Switch the current buffer language to `{target}` via the language selector \
+(bottom-right) or Cmd+Shift+P → Change Language Mode. No reload needed."
+        );
+
+        Ok(SlashCommandOutput {
+            text,
+            sections: Vec::new(),
+        })
     }
 }
 

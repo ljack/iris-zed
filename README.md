@@ -95,6 +95,14 @@ Use the helper scripts to change the default Iris mode and reload the extension:
 
 Then reload Zed (Cmd+Shift+P → “Reload Extensions”) or restart.
 
+You can also use the assistant slash command:
+
+```
+/iris-parens dim
+```
+
+It prints a quick reminder on how to switch the current buffer language mode.
+
 ## Development
 
 The extension consists of:
