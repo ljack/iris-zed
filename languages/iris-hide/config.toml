@@ -1,6 +1,6 @@
 name = "Iris (Hide Parens)"
 grammar = "iris"
-path_suffixes = []
+path_suffixes = ["iris"]
 line_comments = [";;"]
 tab_size = 4
 hard_tabs = false

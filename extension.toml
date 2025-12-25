@@ -27,7 +27,7 @@ language = "Iris"
 
 [agent_servers]
 
-[slash_commands.iris-parens]
+[[slash_commands]]
 name = "iris-parens"
 description = "Show how to switch Iris paren visibility modes."
 tooltip_text = "Switch paren mode (normal|dim|hide)"

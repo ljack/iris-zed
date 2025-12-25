@@ -95,7 +95,7 @@ Use the helper scripts to change the default Iris mode and reload the extension:
 
 Then reload Zed (Cmd+Shift+P → “Reload Extensions”) or restart.
 
-You can also use the assistant slash command:
+You can also use the assistant slash command (after reload):
 
 ```
 /iris-parens dim
