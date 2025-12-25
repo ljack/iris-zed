@@ -7,7 +7,7 @@ repository = "https://github.com/ljack/iris-zed"
 authors = ["Iris Contributors <dev@iris-lang.org>"]
 themes = []
 icon_themes = []
-languages = ["languages/iris"]
+languages = ["languages/iris", "languages/iris-dim", "languages/iris-hide"]
 capabilities = []
 
 [lib]

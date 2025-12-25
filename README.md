@@ -82,7 +82,10 @@ The extension ships with three highlight variants:
 - **Dim**: parentheses rendered in a subdued color
 - **Hidden**: parentheses hidden when conceal is supported
 
-Use the helper scripts and reload the extension:
+You can switch per buffer via the language selector (bottom-right):
+`Iris`, `Iris (Dim Parens)`, `Iris (Hide Parens)` — no reload required.
+
+Use the helper scripts to change the default Iris mode and reload the extension:
 
 ```bash
 ./scripts/use-parens-normal.sh
